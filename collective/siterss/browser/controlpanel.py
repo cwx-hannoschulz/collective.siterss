@@ -14,6 +14,7 @@ from Products.CMFDefault.formlib.schema import SchemaAdapterBase
 #from Products.CMFDefault.formlib.schema import ProxyFieldProperty
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 from Products.ATContentTypes.interface.topic import IATTopic
+from plone.app.collection.interfaces import ICollection
 
 from plone.app.controlpanel.form import ControlPanelForm
 
@@ -33,7 +34,7 @@ class ISiteRSSSchema(Interface):
             required=False,
             value_type=schema.Choice(
                 source=MineSearchableTextSourceBinder(
-                    {'object_provides': IATTopic.__identifier__},
+                    {'object_provides': [IATTopic.__identifier__, ICollection.__identifier__]},
                     default_query='path: '))
         )
 
