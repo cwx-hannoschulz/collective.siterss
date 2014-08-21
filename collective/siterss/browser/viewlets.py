@@ -1,7 +1,7 @@
 from zope.component import getUtility
 from zope.interface import implements, Interface
 from plone.app.layout.viewlets import ViewletBase
-from zope.app.pagetemplate.viewpagetemplatefile import ViewPageTemplateFile
+from zope.browserpage.viewpagetemplatefile import ViewPageTemplateFile
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 from Products.CMFPlone.utils import safe_unicode
 from Products.CMFCore.utils import getToolByName
